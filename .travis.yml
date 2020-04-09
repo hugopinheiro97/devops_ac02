@@ -4,5 +4,7 @@ python:
 before_install:
   - python --version
   - pip install -U pip
+  - pip install codecov
 script:
   - python -m unittest discover
+  - coverage run --source=com/hugo/ -m unittest discover;coverage report -m
